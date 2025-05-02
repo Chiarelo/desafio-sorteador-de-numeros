@@ -1,0 +1,198 @@
+.inputs-group {
+  display: grid;
+  grid-template-columns: repeat(3, 5.38rem);
+  text-align: center;
+  gap: 0.75rem;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 5.375rem;
+  gap: 0.5rem;
+
+  & label {
+    font: var(--label-sm);
+    color: var(--content-secondary);
+    text-transform: uppercase;
+    width: 5.375rem;
+  }
+
+  & input {
+    background-color: var(--background-secondary);
+    border: 1px solid transparent; /* Borda base (1px) */
+    width: 100%;
+    height: 3rem;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    font: var(--display-small);
+    text-align: center;
+    color: var(--content-primary);
+    transition: all 0.1s ease-in-out;
+
+    /* Fundo padrão */
+    background: linear-gradient(
+          var(--background-secondary),
+          var(--background-secondary)
+        )
+        padding-box,
+      linear-gradient(transparent, transparent) border-box;
+
+    &:nth-child(3) {
+      margin-right: auto;
+    }
+
+    /* Hover: borda gradiente de 1px */
+    &:hover {
+      background: linear-gradient(#24222e, #24222e) padding-box,
+        var(--gradient-border) border-box;
+      border: 1px solid transparent; /* Mantém 1px */
+    }
+
+    /* Focus/Active: borda gradiente de 2px (mais espessa) */
+    &:focus,
+    &:active {
+      outline: none;
+      background: linear-gradient(
+            var(--background-secondary),
+            var(--background-secondary)
+          )
+          padding-box,
+        var(--gradient-border) border-box;
+      border: 2px solid transparent; /* Aumenta para 2px */
+    }
+  }
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  margin-block: 1.25rem 2.5rem;
+
+  & label {
+    font: var(--text-sm);
+    font-weight: 400;
+  }
+
+  & input {
+    position: absolute;
+    opacity: 0;
+    z-index: 2;
+    width: 1.97rem;
+    height: 1.1rem;
+    cursor: pointer;
+  }
+
+  & .check-img {
+    transition: background-image 0.5s ease-in-out;
+    background-image: url("../assets/state=default.svg");
+    width: 1.97rem;
+    height: 1.3rem;
+  }
+}
+
+#sorter:checked + .check-img {
+  background-image: url("../assets/state=active.svg");
+  background-repeat: no-repeat;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 0.5rem;
+  border-radius: .5rem;
+  border: 1px solid transparent; /* Para ter base na borda */
+  background: var(--background-tertiary);
+
+  height: 3rem;
+  width: 100%;
+  position: relative;
+  opacity: 1;
+
+  font: var(--label-md);
+  color: var(--content-primary);
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out;
+}
+
+button:hover {
+  background: linear-gradient(var(--background-secondary), var(--background-secondary)) padding-box,
+              var(--gradient-border) border-box;
+  border: 1px solid transparent;
+}
+
+button:focus,
+button:active {
+  outline: none;
+  background: linear-gradient(var(--background-secondary), var(--background-secondary)) padding-box,
+              var(--gradient-border) border-box;
+  border: 2px solid transparent; /* Borda mais grossa */
+}
+
+button:hover::before {
+  opacity: 1;
+  z-index: -1;
+}
+
+button:hover {
+  background-color: var(--background-secondary);
+}
+
+button:hover img {
+  animation: pulse 3s ease-in-out;
+}
+
+button.sorter-again:hover img {
+  cursor: pointer;
+  animation: rotate 3s ease-in-out;
+}
+
+button.sorter-again {
+  transform: translateY(1.25rem);
+  opacity: 0;
+  animation: appear 0.5s 0.5s linear forwards;
+}
+
+button.sorter-again:hover {
+  background-color: var(--background-secondary);
+}
+
+@keyframes appear {
+  0% {
+    transform: translateY(1.25rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(0.5rem);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

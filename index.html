@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
+    <link rel="shortcut icon" href="assets/logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="./styles/index.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Sora:wght@100..800&display=swap"
@@ -14,6 +15,118 @@
     />
   </head>
   <body>
+    <div class="background">
+      <div id="page">
+        <div class="logo">
+          <img src="assets/logo.svg" alt="logo numbers" />
+          <h2>NUMBERS</h2>
+        </div>
+
+        <div class="container">
+          <header>
+            <span class="overline">Online - Gratuito</span>
+            <h1>Sorteador<br />de Números</h1>
+          </header>
+
+          <aside>
+            <div class="questions">
+              <div class="items">
+                <img src="assets/Frame-2.svg" alt="" />
+                <div>
+                  <span>Como funciona o sorteador de números?</span>
+                  <p>
+                    O sorteador utiliza um algoritmo de geração aleatória para
+                    criar números dentro do intervalo especificado pelo usuário.
+                  </p>
+                </div>
+              </div>
+
+              <div class="items">
+                <img src="assets/Frame-2.svg" alt="" />
+                <div>
+                  <span>Posso escolher o intervalo dos números?</span>
+                  <p>
+                    Sim, você pode definir os valores mínimo e máximo para o
+                    intervalo dos números sorteados.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <div class="sorterArea">
+            <div class="formArea">
+              <h3>QUERO SORTEAR:</h3>
+              <p>
+                defina o intervalo e a quantidade de números, clique em
+                "Sortear" e veja os draw-numbers-containerados na tela. É rápido
+                e fácil!
+              </p>
+
+              <form action="">
+                <div class="inputs-group">
+                  <div class="input-wrapper">
+                    <label for="number">Números</label>
+                    <input
+                      type="text"
+                      id="number"
+                      placeholder="0"
+                      class="numeric-only"
+                    />
+                  </div>
+                  <div class="input-wrapper">
+                    <label for="beggin">De</label>
+                    <input
+                      type="text"
+                      class="numeric-only"
+                      id="beggin"
+                      placeholder="0"
+                    />
+                  </div>
+                  <div class="input-wrapper">
+                    <label for="end">Até</label>
+                    <input
+                      type="text"
+                      class="numeric-only"
+                      id="end"
+                      placeholder="0"
+                    />
+                  </div>
+                </div>
+                <div class="checkbox-wrapper">
+                  <input type="checkbox" id="sorter" />
+                  <span class="check-img"></span>
+                  <label for="sorter">Não repetir número</label>
+                </div>
+
+                <button type="submit">
+                  <span>Sortear</span>
+                  <img src="assets/Frame-1.svg" alt="" />
+                </button>
+              </form>
+            </div>
+
+            <div class="number-sorters">
+              <div class="title-sorter">
+                <h2>Resultado do sorteio</h2>
+                <p>1º Resultado</p>
+              </div>
+
+              <div class="draw-numbers-container">
+                <!-- <div class="number-container">
+                  <span>23</span>
+                </div> -->
+              </div>
+
+              <button class="sorter-again" type="button">
+                <span>Sortear novamente</span>
+                <img src="assets/Frame.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
