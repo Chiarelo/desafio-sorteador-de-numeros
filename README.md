@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Logo" src="./assets/logo.svg" width="250px" >
+  <img alt="Logo" src="https://github.com/user-attachments/assets/1fd876b5-4339-461a-a459-46c00a7ae3bd" width="250px" >
 </h1>
 
 <p align="center">
@@ -26,16 +26,12 @@ Esse é um dos desafios da formação Full Stack, um dos conteúdos disponíveis
 
 <p align="center">💻 <b>Para PC:</b></p>
 <p align="center">
-  <img alt="Projeto para PC" src="" width="800px">
+  <img alt="Projeto para PC" src="https://github.com/user-attachments/assets/c6da58fa-4e20-4231-b8fb-9a2b2b002a12" width="800px">
 </p>
 
 <p align="center">📱 <b>Para Celular:</b></p>
 <p align="center">
-  <img alt="Projeto para Celular" src="" width="300px">
-</p>
-
-<p align="center">
-  <img alt="Projeto para Celular" src="" width="300px">
+  <img alt="Projeto para Celular" src="https://github.com/user-attachments/assets/52e1330b-019f-4d94-b611-e932df947516" width="300px">
 </p>
 
 ---
