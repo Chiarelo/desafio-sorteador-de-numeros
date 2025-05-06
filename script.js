@@ -50,6 +50,11 @@ form.onsubmit = function (event) {
 };
 
 const generateNumbersNoRepeat = (min, max, quantity) => {
+  if (max - min + 1 < quantity) {
+    quantity = max - min + 1;
+    alert("A quantidade de números é maior que o intervalo definido.");
+  }
+
   let randomSortedNumbers = new Array();
   for (let i = 0; i < quantity; i++) {
     let randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
@@ -88,14 +93,12 @@ function displayNumbers(numbers) {
       animationDiv.appendChild(span);
       container.appendChild(animationDiv);
     }, index * 4000);
-    if(index === numbers.length - 1) {
+    if (index === numbers.length - 1) {
       setTimeout(() => {
         button.style.display = "flex";
       }, (index + 1) * 4000);
     }
   });
-
-  
 }
 
 function draw() {
@@ -112,9 +115,10 @@ function draw() {
     let max = Number(Sorter.end);
     let quantity = Number(Sorter.quantity);
 
+    console.log(repeatNumber.checked);
     let pickedNumber = repeatNumber.checked
-      ? generateNumbers(min, max, quantity)
-      : generateNumbersNoRepeat(min, max, quantity);
+    ? generateNumbersNoRepeat(min, max, quantity)
+    : generateNumbers(min, max, quantity);
 
     displayNumbers(pickedNumber);
   } catch (error) {
